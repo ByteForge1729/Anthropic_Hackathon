@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #0E7C7C;
+  --accent-soft: #DBEEEE;
+  --accent-ink: #0A5C5C;
+  --accent-2: #C97A2B;
+  --accent-2-soft: #FBEDD9;
+  --accent-2-ink: #8F5316;
+
+  --bg: #F6F8FB;
+  --surface: #FFFFFF;
+  --surface-2: #FBFCFE;
+  --ink: #0B1B2B;
+  --ink-2: #41506B;
+  --ink-3: #7A8AA3;
+  --line: #E4EAF2;
+  --line-2: #EFF3F8;
+  --danger: #B83232;
+  --danger-soft: #FBECEC;
+  --ok: #1F8A5B;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 22px;
+
+  --shadow-sm: 0 1px 2px rgba(13, 27, 50, 0.04), 0 1px 3px rgba(13, 27, 50, 0.04);
+  --shadow-md: 0 1px 2px rgba(13, 27, 50, 0.04), 0 8px 24px -10px rgba(13, 27, 50, 0.10);
+  --shadow-lg: 0 1px 2px rgba(13, 27, 50, 0.04), 0 24px 48px -20px rgba(13, 27, 50, 0.18);
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+[data-theme="dark"] {
+  --accent-soft: #142844;
+  --accent-ink: #8FB6FF;
+  --accent-2: #F0B070;
+  --accent-2-soft: #3A2614;
+  --accent-2-ink: #F4C794;
+  --bg: #0B1320;
+  --surface: #121B2C;
+  --surface-2: #0F1828;
+  --ink: #EAF1FB;
+  --ink-2: #B6C2D6;
+  --ink-3: #7E8CA6;
+  --line: #1F2B40;
+  --line-2: #182236;
+  --danger-soft: #3A1B1B;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-mono, .mono {
+  font-family: var(--font-mono);
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Brand wordmark */
+.swayam-brand {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent-ink);
+}
+.swayam-brand .devanagari {
+  font-weight: 600;
+}
+
+/* Logo: keep its native teal in light mode, brighten + slight invert for dark mode legibility */
+.swayam-logo {
+  transition: filter 200ms ease;
+}
+[data-theme="dark"] .swayam-logo {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(36%) saturate(458%)
+    hue-rotate(127deg) brightness(96%) contrast(89%);
+}
