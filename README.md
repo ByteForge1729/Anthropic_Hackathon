@@ -38,39 +38,46 @@ The patient or a family member uploads a photo or PDF of their discharge summary
 ## Project Structure
 
 ```
-├── client/          # Frontend
-├── server/          # Backend (Claude API integration)
-├── package.json
-├── package-lock.json
-└── .env.example
+├── app/                                  # Next.js app router (pages & API routes)
+├── components/                           # Reusable UI components
+├── lib/                                  # Utility functions and API helpers
+├── types/                                # TypeScript type definitions
+├── public/                               # Static assets
+├── DesignElements/                       # Design references
+├── stitch_medical_recovery_dashboard/    # Dashboard module
+├── .env.local.example                    # Environment variable template
+├── next.config.js                        # Next.js configuration
+├── tailwind.config.ts                    # Tailwind CSS configuration
+├── tsconfig.json                         # TypeScript configuration
+└── package.json
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) installed
+- [Node.js](https://nodejs.org/) (v18+)
 - An [Anthropic API key](https://console.anthropic.com/)
 
 ### Setup
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/ByteForge1729/Anthropic_Hackathon.git
+cd Anthropic_Hackathon
 
 # 2. Install dependencies
 npm install
 
 # 3. Set up environment variables
-cp .env.example .env
-# Open .env and replace the placeholder with your Anthropic API key
+cp .env.local.example .env.local
+# Open .env.local and add your Anthropic API key
 
-# 4. Run the app
+# 4. Run the dev server
 npm run dev
 ```
 
-The app should now be running locally.
+The app should now be running at `http://localhost:3000`.
 
 ---
 
@@ -87,9 +94,10 @@ This project is deliberately constrained:
 
 ## Built With
 
-- [Anthropic Claude API](https://docs.anthropic.com/) — for parsing and translating discharge summaries
-- Node.js — backend server
-- JavaScript — frontend client
+- [Next.js](https://nextjs.org/) — React framework
+- [TypeScript](https://www.typescriptlang.org/) — type safety
+- [Tailwind CSS](https://tailwindcss.com/) — styling
+- [Anthropic Claude API](https://docs.anthropic.com/) — discharge summary parsing and translation
 
 ## Hackathon Context
 
@@ -99,8 +107,5 @@ This project is deliberately constrained:
 
 ## Team
 
-*Add your team members here.*
-
-## License
-
-This project was built for a hackathon. See [LICENSE](LICENSE) for details.
+Tirth Sheth - 25B3915
+Srinath Sridhar - 25B1251
